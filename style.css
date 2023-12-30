@@ -55,7 +55,7 @@ body {
     }
 }
 
-.container2{
+.container2 {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -71,7 +71,7 @@ body {
     background-color: #0c192c;
 }
 
-.container2 h2{
+.container2 h2 {
     text-align: center;
     font-size: 5em;
     line-height: 1.2em;
@@ -79,7 +79,7 @@ body {
     color: #4fc3dc;
 }
 
-.container2 h2 span{
+.container2 h2 span {
     display: block;
     font-weight: 300;
     font-size: 0.3em !important;
@@ -106,7 +106,7 @@ body {
     font-weight: 500;
 }
 
-.countdown div:before{
+.countdown div:before {
     content: '';
     position: absolute;
     bottom: -30px;
@@ -120,46 +120,49 @@ body {
     font-weight: 300;
 }
 
-.countdown #day:before{
+.countdown #day:before {
     content: 'Days';
 }
 
-.countdown #hour:before{
+.countdown #hour:before {
     content: 'Hours';
 }
 
-.countdown #minute:before{
+.countdown #minute:before {
     content: 'Minutes';
 }
 
-.countdown #second:before{
+.countdown #second:before {
     content: 'Seconds';
 }
 
 /* mobile view */
 
 @media (max-width: 700px) {
-    .container2{
+    .container2 {
         padding: 10px 35px;
     }
+
     .countdown {
         flex-direction: column;
         margin-top: 0;
         margin-bottom: 25px;
     }
-    .countdown div{
+
+    .countdown div {
         margin: 15px 0;
         width: 50px;
         height: 50px;
         line-height: 50px;
         font-size: 2em;
     }
-    .container2 h2{
+
+    .container2 h2 {
         font-size: 3em;
     }
 }
 
-section{
+section {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -168,7 +171,7 @@ section{
     width: 100%;
 }
 
-section::before{
+section::before {
     content: '';
     position: absolute;
     width: 15vw;
@@ -176,10 +179,10 @@ section::before{
     border-radius: 50%;
     border: 5vw solid #ff1062;
     box-shadow: 0 0 0 1vw #222,
-                0 0 0 1.3vw #fff;
+        0 0 0 1.3vw #fff;
 }
 
-section h2{
+section h2 {
     position: absolute;
     font-size: 5vw;
     color: #fff;
@@ -187,44 +190,37 @@ section h2{
     line-height: 2.5em;
     z-index: 10;
     text-shadow: 1px 1px 0 #ccc,
-                2px 2px 0 #ccc,
-                3px 3px 0 #ccc,
-                4px 4px 0 #ccc,
-                5px 5px 0 #ccc,
-                10px 10px 0 rgba(0, 0, 0, 0.2);
+        2px 2px 0 #ccc,
+        3px 3px 0 #ccc,
+        4px 4px 0 #ccc,
+        5px 5px 0 #ccc,
+        10px 10px 0 rgba(0, 0, 0, 0.2);
     animation: floating 5s ease-in-out infinite;
 }
 
-section h2 span{
+section h2 span {
     font-weight: 700;
     font-size: 3em;
     text-shadow: 1px 1px 0 #ccc,
-                2px 2px 0 #ccc,
-                3px 3px 0 #ccc,
-                4px 4px 0 #ccc,
-                5px 5px 0 #ccc,
-                6px 6px 0 #ccc,
-                7px 7px 0 #ccc,
-                8px 8px 0 #ccc,
-                9px 9px 0 #ccc,
-                20px 20px 0 rgba(0, 0, 0, 0.2);
-}
-
-@media (max-width: 700px){
-    section::before{
-        width: 40vw;
-        height: 40vw;
-    }
-    section h2{
-        font-size: 10vw;
-    }
+        2px 2px 0 #ccc,
+        3px 3px 0 #ccc,
+        4px 4px 0 #ccc,
+        5px 5px 0 #ccc,
+        6px 6px 0 #ccc,
+        7px 7px 0 #ccc,
+        8px 8px 0 #ccc,
+        9px 9px 0 #ccc,
+        20px 20px 0 rgba(0, 0, 0, 0.2);
 }
 
 @keyframes floating {
-    0%, 100%{
+
+    0%,
+    100% {
         transform: skew(15deg) translate(0, -20px);
     }
-    50%{
+
+    50% {
         transform: skew(15deg) translate(0, 20px);
     }
 }
@@ -234,23 +230,86 @@ section i {
     background: #fff;
     border-radius: 50%;
     box-shadow: 0 0 10px #fff,
-                0 0 20px #fff,
-                0 0 40px #fff,
-                0 0 80px #fff;
+        0 0 20px #fff,
+        0 0 40px #fff,
+        0 0 80px #fff;
     animation: animate 2s linear infinite;
 }
 
-@keyframes animate{
-    0%{
+@keyframes animate {
+    0% {
         opacity: 0;
     }
-    10%{
+
+    10% {
         opacity: 1;
     }
-    90%{
+
+    90% {
         opacity: 1;
     }
-    100%{
+
+    100% {
         opacity: 0;
+    }
+}
+
+quote {
+    position: absolute;
+    font-size: 1.5em;
+    font-weight: 300;
+    line-height: 1.5em;
+    margin-bottom: 20px;
+    bottom: 0;
+    color: #10d1ff;
+    background: #222;
+    text-align: center;
+    padding: 5px;
+    display: inline;
+}
+
+.typing {
+    color: orange;
+    animation:
+        typing 3.5s steps(40, end),
+        blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        color: transparent
+    }
+
+    50% {
+        color: orange;
+    }
+
+}
+
+@media (max-width: 700px) {
+    section::before {
+        width: 40vw;
+        height: 40vw;
+    }
+
+    section h2 {
+        font-size: 10vw;
+    }
+
+    quote {
+        font-size: 0.8em;
     }
 }
