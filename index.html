@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome 2024</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+</body>
+<script>
+    const NewYear = {
+        countdown() {
+            let html = `
+            <div class="container">
+                <div class="bubbles"></div>
+            </div>
+            <div class="container2">
+                <h2><span>Countdown to New Year</span>2024</h2>
+                <div class="countdown">
+                    <div id="day"></div>
+                    <div id="hour"></div>
+                    <div id="minute"></div>
+                    <div id="second"></div>
+                </div>
+            </div>`;
+            document.querySelector('body').innerHTML = html;
+            document.querySelector('body').setAttribute("style", "background: #0c192c");
+            let windowWidth = window.innerWidth;
+            let span = Math.floor(windowWidth / 30);
+            let i = [11, 12, 24, 10, 14, 23, 18, 16, 19, 20, 22, 25, 18, 21, 15, 13, 26, 17, 13, 15, 16, 25];
+            if (span > i.length) {
+                let count = span / i.length;
+                for (let k = 0; k < count; k++) {
+                    i = i.concat(i);
+                }
+            }
+            for (let j = 0; j < span; j++) {
+                let span = document.createElement('span');
+                span.style = `--i:${i[j]};`;
+                document.querySelector('.bubbles').appendChild(span);
+            }
+
+            let day = document.getElementById('day');
+            let hour = document.getElementById('hour');
+            let minute = document.getElementById('minute');
+            let second = document.getElementById('second');
+
+            let newYear = new Date('January 1, 2024 00:00:00').getTime();
+            let x = setInterval(function () {
+                let now = new Date().getTime();
+                let diff = newYear - now;
+                let d = Math.floor(diff / (1000 * 60 * 60 * 24));
+                let h = Math.floor(diff % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
+                let m = Math.floor(diff % (1000 * 60 * 60) / (1000 * 60));
+                let s = Math.floor(diff % (1000 * 60) / 1000);
+                day.innerHTML = d;
+                hour.innerHTML = h;
+                minute.innerHTML = m;
+                second.innerHTML = s;
+            }, 1000);
+        },
+        wish(){
+            let html = `<section>
+                <h2>Happy New Year <br><span>2024</span></h2>
+            </section>`;
+            document.querySelector('body').innerHTML = html;
+            document.querySelector('body').setAttribute("style", "background: linear-gradient(135deg, #111, #222, #111);");
+
+            const count = 200;
+            const section = document.querySelector('section');
+            let i = 0;
+
+
+            while (i < count){
+                const star = document.createElement('i');
+                const x = Math.floor(Math.random() * window.innerWidth);
+                const y = Math.floor(Math.random() * window.innerHeight);
+
+                const size = Math.random() * 4;
+                star.style.left = x + 'px';
+                star.style.top = y + 'px';
+                star.style.width = 1 + size + 'px';
+                star.style.height = 1 + size + 'px';
+
+                star.style.animationDuration = 2 + Math.random() * 2 + 's';
+                star.style.animationDelay = 0 + Math.random() * 2 + 's';
+
+                section.appendChild(star);
+                i++;
+            }
+        }
+    }
+
+    window.addEventListener('load', ()=>{
+        main();
+    });
+
+    window.addEventListener('resize', ()=>{
+        main();
+    });
+
+    function main(){
+        if(new Date().getFullYear() == 2024){
+            NewYear.wish()
+        } else {
+            NewYear.countdown()
+        }
+    }
+
+</script>
+
+</html>
