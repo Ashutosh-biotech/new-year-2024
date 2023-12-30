@@ -74,7 +74,7 @@ body {
 .container2 h2{
     text-align: center;
     font-size: 5em;
-    line-height: 0.75em;
+    line-height: 1.2em;
     margin-bottom: 40px;
     color: #4fc3dc;
 }
@@ -138,12 +138,14 @@ body {
 
 /* mobile view */
 
-@media (max-width: 480px) {
+@media (max-width: 700px) {
     .container2{
-        padding: 20px 35px;
+        padding: 10px 35px;
     }
     .countdown {
         flex-direction: column;
+        margin-top: 0;
+        margin-bottom: 25px;
     }
     .countdown div{
         margin: 15px 0;
@@ -153,7 +155,7 @@ body {
         font-size: 2em;
     }
     .container2 h2{
-        font-size: 2.5em;
+        font-size: 3em;
     }
 }
 
