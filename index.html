@@ -69,6 +69,9 @@
                     hour.innerHTML = h;
                     minute.innerHTML = m;
                     second.innerHTML = s;
+                    if (d == 0 && h == 0 && m == 0 && s == 0) {
+                        main();
+                    }
                 }, 500);
             },
             wish: function () {
